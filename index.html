@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HLS - HUST Logistics and Supply Chain Club</title>
+    <meta
+      name="description"
+      content="Hust Logistics and Supply Chain Club (HLS) - Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành Logistics và Quản lý chuỗi cung ứng."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        prefix: 'tw-',
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white" style="z-index: 1000;">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <span class="footer-logo">H</span>
+          <span class="fw-bold">HLS</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hoat-dong.html">Hoạt động</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="su-kien.html">Sự kiện</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cuoc-thi.html">Cuộc thi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lien-he.html">Liên hệ</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-cta" href="#" data-fillout-id="e7P6HJx4a7us" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium">Trở thành thành viên</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tw-bg-gradient-to-b tw-from-[#f0f6ff] tw-via-[#fffbee] tw-to-[#f0f6ff] tw-min-h-screen tw-flex tw-flex-col tw-justify-center">
+      <main class="tw-flex-grow tw-flex tw-flex-col tw-items-center tw-px-6 sm:tw-px-10 tw-max-w-7xl tw-mx-auto tw-w-full tw-py-12">
+        <button
+          class="tw-mt-10 tw-mb-6 tw-flex tw-items-center tw-space-x-2 tw-border tw-border-blue-600 tw-text-blue-600 tw-text-xs tw-rounded-full tw-px-4 tw-pr-1.5 tw-py-1.5 hover:tw-bg-blue-50 tw-transition"
+          type="button"
+          onclick="window.location.href='hoat-dong.html'">
+          <span>
+            Khám phá các hoạt động của CLB
+          </span>
+          <span class="tw-flex tw-items-center tw-justify-center tw-size-6 tw-p-1 tw-rounded-full tw-bg-blue-600">
+            <svg width="14" height="11" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 6.5h14M9.5 1 15 6.5 9.5 12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <h1 class="tw-text-center tw-text-gray-900 tw-font-semibold tw-text-3xl sm:tw-text-4xl md:tw-text-5xl lg:tw-text-6xl tw-max-w-4xl tw-leading-tight">
+          HUST Logistics and
+          <span class="tw-text-blue-600">
+            Supply Chain Club
+          </span>
+        </h1>
+        <p class="tw-mt-6 tw-text-center tw-text-gray-600 tw-max-w-2xl tw-text-base sm:tw-text-lg tw-leading-relaxed">
+          Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành 
+          Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội.
+        </p>
+        <button
+          class="tw-mt-8 tw-bg-amber-500 tw-text-gray-900 tw-px-6 tw-pr-2.5 tw-py-3 tw-rounded-full tw-text-sm tw-font-semibold tw-flex tw-items-center tw-space-x-2 hover:tw-bg-amber-600 tw-transition tw-shadow-lg"
+          type="button"
+          data-fillout-id="e7P6HJx4a7us" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium">
+          <span>
+            Trở thành thành viên
+          </span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.821 11.999h13.43m0 0-6.714-6.715m6.715 6.715-6.715 6.715" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div aria-label="Thành viên CLB" class="tw-mt-16 tw-flex tw-max-md:overflow-x-auto tw-gap-6 tw-max-w-5xl tw-w-full tw-pb-6 tw-justify-center">
+          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+            src="image/herosection/1.jpg"
+            width="144" />
+          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+            src="image/herosection/2.jpg"
+            width="144" />
+          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+            src="image/herosection/3.jpg"
+            width="144" />
+          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+            src="image/herosection/4.JPG"
+            width="144" />
+          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md tw-hidden md:tw-block" height="176"
+            src="image/herosection/5.jpg"
+            width="144" />
+        </div>
+      </main>
+    </section>
+
+    <!-- Về chúng tôi -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">VỀ HLS</h2>
+        <p class="section-subtitle">
+          Câu lạc bộ Hust Logistics and Supply   Chain Club  là Câu lạc bộ học thuật chính thức của ngành Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội, được thành lập vào tháng 5/2020 dưới sự quản lý của Trường Kinh tế, Đại học Bách khoa Hà Nội.
+        </p>
+        <p class="section-subtitle">
+          CLB HLS được thành lập với mục đích xây dựng một cộng đồng dành cho những bạn có niềm đam mê với chuyên ngành L&SC tại ĐHBKHN nói riêng và tất cả những bạn sinh viên trên toàn quốc nói chung
+Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các bạn sinh viên với thầy cô và các doanh nghiệp, từ đó tạo cơ hội để các bạn sinh viên sớm được tiếp xúc với những kiến thức chuyên sâu, kinh nghiệm quý báu, tạo bàn đạp để phát triển bản thân trong tương lai.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cơ cấu tổ chức (tabs) -->
+    <section class="section bg-alt">
+      <div class="container" data-org-tabs>
+        <h2 class="section-title">Cơ cấu tổ chức</h2>
+        <div class="org-wrapper row g-0 mt-3">
+          <div class="col-lg-4 org-list p-2 p-lg-3">
+            <button class="org-tab-btn active" data-target="ban-truyen-thong">Ban Truyền thông</button>
+            <button class="org-tab-btn" data-target="ban-doi-ngoai">Ban Đối ngoại</button>
+            <button class="org-tab-btn" data-target="ban-su-kien">Ban Sự kiện</button>
+            <button class="org-tab-btn" data-target="ban-chuyen-mon">Ban Chuyên môn</button>
+            <button class="org-tab-btn" data-target="ban-nhan-su">Ban Nhân sự</button>
+          </div>
+          <div class="col-lg-8 p-4 p-lg-5 org-content">
+            <div class="org-panel active fade-in" id="ban-truyen-thong">
+              <img
+                src="image/cac-ban/ban-truyen-thong.jpg"
+                class="img-fluid rounded-3 mb-4"
+                alt="Ban Truyền thông"
+                style="height: 350px; width: 100%; object-fit: cover"
+              />
+              <h5 class="fw-bold mb-2">Ban Truyền thông</h5>
+              <p class="mb-0 text-muted-2">
+                Chịu trách nhiệm xây dựng và phát triển hình ảnh của CLB trên các
+                kênh truyền thông, thiết kế ấn phẩm, quản lý fanpage và kết nối các
+                thành viên.
+              </p>
+            </div>
+            <div class="org-panel" id="ban-doi-ngoai">
+              <img
+                src="image/cac-ban/ban-doi-ngoai.jpg"
+                class="img-fluid rounded-3 mb-4"
+                alt="Ban Đối ngoại"
+                style="height: 350px; width: 100%; object-fit: cover"
+              />
+              <h5 class="fw-bold mb-2">Ban Đối ngoại</h5>
+              <p class="mb-0 text-muted-2">
+                Kết nối doanh nghiệp, đối tác, cựu sinh viên; tổ chức hoạt động hợp
+                tác và hỗ trợ cơ hội nghề nghiệp cho thành viên.
+              </p>
+            </div>
+            <div class="org-panel" id="ban-su-kien">
+              <img
+                src="image/cac-ban/ban-su-kien.jpg"
+                class="img-fluid rounded-3 mb-4"
+                alt="Ban Sự kiện"
+                style="height: 350px; width: 100%; object-fit: cover"
+              />
+              <h5 class="fw-bold mb-2">Ban Sự kiện</h5>
+              <p class="mb-0 text-muted-2">
+                Lên ý tưởng, lập kế hoạch và triển khai các chương trình, sự kiện học
+                thuật và phong trào của CLB.
+              </p>
+            </div>
+            <div class="org-panel" id="ban-chuyen-mon">
+              <img
+                src="image/cac-ban/ban-chuyen-mon.jpg"
+                class="img-fluid rounded-3 mb-4"
+                alt="Ban Chuyên môn"
+                style="height: 350px; width: 100%; object-fit: cover"
+              />
+              <h5 class="fw-bold mb-2">Ban Chuyên môn</h5>
+              <p class="mb-0 text-muted-2">
+                Tổ chức workshop, seminar, training nội bộ; xây dựng tài liệu học tập
+                và phát triển chuyên môn cho thành viên.
+              </p>
+            </div>
+            <div class="org-panel" id="ban-nhan-su">
+              <img
+                src="image/cac-ban/ban-nhan-su.jpg"
+                class="img-fluid rounded-3 mb-4"
+                alt="Ban Nhân sự"
+                style="height: 350px; width: 100%; object-fit: cover"
+              />
+              <h5 class="fw-bold mb-2">Ban Nhân sự</h5>
+              <p class="mb-0 text-muted-2">
+                Quản lý và phát triển nguồn nhân lực, tổ chức các hoạt động nội bộ,
+                gắn kết thành viên và xây dựng văn hóa CLB.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lợi ích -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Lợi ích khi trở thành thành viên</h2>
+        <div class="row g-4 mt-1 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+          <div class="col">
+            <div class="card h-100 p-3 benefit-card">
+              <div class="benefit-icon mb-3"><i class="bi bi-mortarboard"></i></div>
+              <h5 class="fw-semibold mb-2">Phát triển chuyên môn</h5>
+              <p class="text-muted mb-0">Tham gia workshop, seminar từ chuyên gia.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 p-3 benefit-card">
+              <div class="benefit-icon mb-3"><i class="bi bi-people"></i></div>
+              <h5 class="fw-semibold mb-2">Mở rộng mạng lưới</h5>
+              <p class="text-muted mb-0">Kết nối bạn bè, anh chị và doanh nghiệp đối tác.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 p-3 benefit-card">
+              <div class="benefit-icon mb-3"><i class="bi bi-lightning-charge"></i></div>
+              <h5 class="fw-semibold mb-2">Kỹ năng thực tế</h5>
+              <p class="text-muted mb-0">Tổ chức sự kiện, làm việc nhóm, phát triển kỹ năng mềm.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 p-3 benefit-card">
+              <div class="benefit-icon mb-3"><i class="bi bi-briefcase"></i></div>
+              <h5 class="fw-semibold mb-2">Cơ hội nghề nghiệp</h5>
+              <p class="text-muted mb-0">Tiếp cận thực tập, việc làm từ sớm qua mạng lưới HLS.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6 d-flex align-items-center gap-3">
+            <span class="footer-logo">H</span>
+            <div>
+              <div class="fw-bold">Hust Logistics and Supply Chain Club</div>
+              <div class="text-muted-2 small">Đại học Bách Khoa Hà Nội</div>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="small">Email: contact.hls@hust.edu.vn</div>
+            <div class="small">Facebook: <a href="#">Fanpage HLS</a> • LinkedIn: <a href="#">HLS</a></div>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary" />
+        <div class="d-flex justify-content-between small">
+          <span>© 2024 hls - Hust Logistics and Supply Chain Club. All rights reserved.</span>
+          <span>Made with Bootstrap 5</span>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="js/script.js"></script>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+  </body>
+  </html>
+
+
+
