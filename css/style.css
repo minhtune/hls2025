@@ -213,6 +213,69 @@ h6 {
   object-fit: cover;
 }
 
+/* Call to Action Section */
+.cta-section {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--bg-alt);
+  overflow: hidden;
+}
+.cta-image-frame {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.cta-section .container {
+  z-index: 2;
+}
+.cta-title {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+.cta-description {
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-cta-large {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 250ms ease;
+  box-shadow: 0 12px 32px rgba(13, 110, 253, 0.25);
+}
+.btn-cta-large:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(13, 110, 253, 0.3);
+}
+
+@media (max-width: 767.98px) {
+  .cta-section {
+    padding: 4rem 0;
+  }
+  .cta-title {
+    font-size: 2rem;
+  }
+  .cta-description {
+    font-size: 1rem;
+  }
+}
+
 /* Footer */
 footer {
   background: #0b1220;
