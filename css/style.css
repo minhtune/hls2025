@@ -54,6 +54,17 @@ h6 {
   background: #f59e0bcc;
 }
 
+.site-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
 /* Hero - Now using Tailwind CSS classes in HTML */
 
 /* Sections */
@@ -274,28 +285,6 @@ h6 {
   .cta-description {
     font-size: 1rem;
   }
-}
-
-/* Footer */
-footer {
-  background: #0b1220;
-  color: #cbd5e1;
-}
-footer a {
-  color: #e2e8f0;
-}
-footer a:hover {
-  color: #ffffff;
-}
-.footer-logo {
-  width: 40px;
-  height: 40px;
-  background: var(--primary);
-  color: white;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  font-weight: 800;
 }
 
 /* Utilities */
