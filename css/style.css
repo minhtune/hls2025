@@ -55,6 +55,29 @@ h6 {
 }
 
 /* Hero - Now using Tailwind CSS classes in HTML */
+/* Hero image scroll for mobile */
+.hero-image-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hero-image-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.hero-image-scroll img {
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-image-scroll {
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+}
 
 /* Sections */
 .section {
