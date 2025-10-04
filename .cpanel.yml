@@ -6,4 +6,3 @@ deployment:
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R image $DEPLOYPATH
     - /bin/cp *.html $DEPLOYPATH
-    - /bin/cp CNAME $DEPLOYPATH
