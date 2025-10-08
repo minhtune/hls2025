@@ -186,10 +186,60 @@ h6 {
 }
 .activity-card {
   transition: transform 200ms ease, box-shadow 200ms ease;
+  border-radius: 12px;
+  overflow: hidden;
 }
 .activity-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Event feature section */
+.event-feature-card img {
+  transition: transform 300ms ease;
+}
+.event-feature-card img:hover {
+  transform: scale(1.02);
+}
+.event-stats {
+  padding: 1.5rem;
+  background: var(--bg-alt);
+  border-radius: 12px;
+}
+
+/* Competition cards */
+.competition-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.competition-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+.competition-image {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+.competition-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+.competition-card:hover .competition-image img {
+  transform: scale(1.05);
+}
+.competition-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.competition-content {
+  padding: 1.5rem;
 }
 
 /* Events timeline */
