@@ -5,4 +5,18 @@ deployment:
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R image $DEPLOYPATH
+    - /bin/cp -R api $DEPLOYPATH
+    - /bin/cp -R admin $DEPLOYPATH
     - /bin/cp *.html $DEPLOYPATH
+    - /bin/cp *.php $DEPLOYPATH 2>/dev/null || true
+    - /bin/mkdir -p $DEPLOYPATH/uploads/hoat-dong $DEPLOYPATH/uploads/su-kien $DEPLOYPATH/uploads/cuoc-thi $DEPLOYPATH/uploads/thanh-vien $DEPLOYPATH/uploads/gioi-thieu
+    - /bin/mkdir -p $DEPLOYPATH/data
+    - /bin/cp .htaccess $DEPLOYPATH/.htaccess 2>/dev/null || true
+    - /bin/cp robots.txt $DEPLOYPATH/robots.txt 2>/dev/null || true
+    - /bin/cp sitemap.xml $DEPLOYPATH/sitemap.xml 2>/dev/null || true
+    - /bin/cp uploads/.htaccess $DEPLOYPATH/uploads/.htaccess 2>/dev/null || true
+    - /bin/cp data/.htaccess $DEPLOYPATH/data/.htaccess 2>/dev/null || true
+    - /bin/cp -n data/*.json $DEPLOYPATH/data/ 2>/dev/null || true
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} + 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} + 2>/dev/null || true

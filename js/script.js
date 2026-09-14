@@ -49,7 +49,7 @@ function initMobileNavAutoClose() {
   const nav = document.querySelector(".navbar-collapse");
   if (!nav) return;
   nav.addEventListener("click", (e) => {
-    if (e.target.matches("a.nav-link")) {
+    if (e.target.matches("a.nav-link, a.btn-cta") || e.target.closest("a.nav-link, a.btn-cta")) {
       const bsCollapse = bootstrap.Collapse.getInstance(nav);
       if (bsCollapse && nav.classList.contains("show")) {
         bsCollapse.hide();

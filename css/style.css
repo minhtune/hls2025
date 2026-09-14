@@ -54,9 +54,126 @@ h6 {
   background: #f59e0bcc;
 }
 
-/* Hero - Now using Tailwind CSS classes in HTML */
-/* Hero image scroll for mobile */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(180deg, #f0f6ff 0%, #fffbee 50%, #f0f6ff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .hero-content {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.hero-badge-btn {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: transparent;
+  padding: 0.375rem 0.375rem 0.375rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.hero-badge-btn:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.hero-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  background-color: #2563eb;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  text-align: center;
+  color: #7f1d1d;
+  font-weight: 600;
+  max-width: 56rem;
+  line-height: 1.25;
+  font-size: 1.875rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-title-highlight {
+  color: #2563eb;
+}
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #4b5563;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 576px) {
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Hero image scroll */
 .hero-image-scroll {
+  margin-top: 4rem;
+  display: flex;
+  gap: 1.5rem;
+  max-width: 64rem;
+  width: 100%;
+  padding-bottom: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -74,9 +191,32 @@ h6 {
 
 @media (min-width: 768px) {
   .hero-image-scroll {
+    justify-content: center;
     overflow-x: visible;
     scroll-snap-type: none;
   }
+}
+
+.hero-img-item {
+  width: 8rem !important;
+  height: 10rem !important;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+@media (min-width: 576px) {
+  .hero-img-item {
+    width: 9rem !important;
+    height: 11rem !important;
+  }
+}
+
+.hero-img-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 /* Sections */
@@ -373,5 +513,201 @@ h6 {
   }
 }
 
+/* Members Page */
+.member-card {
+  border-radius: 16px;
+  background: #ffffff;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  border: 1px solid var(--border) !important;
+}
 
+.member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.member-avatar-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fee2e2;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.12);
+  transition: transform 300ms ease;
+}
+
+.member-card:hover .member-avatar-box {
+  transform: scale(1.05);
+}
+
+.member-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-filter-tabs .btn-filter {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 180ms ease;
+}
+
+.member-filter-tabs .btn-filter:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: var(--primary);
+}
+
+.member-filter-tabs .btn-filter.active {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  font-weight: 600;
+}
+
+/* Image smooth rendering */
+img {
+  content-visibility: auto;
+}
+
+/* ==========================================================================
+   Site Footer (F9)
+   ========================================================================== */
+.site-footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+.site-footer a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.site-footer a:hover {
+  color: #ffffff !important;
+}
+.site-footer .footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.site-footer .footer-links a:hover {
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+.site-footer .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.site-footer .social-link:hover {
+  background: var(--primary, #0d6efd);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Partner & Enterprise Logo Section (F12)
+   ========================================================================== */
+.partners-section {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  max-width: 170px;
+  padding: 0.5rem;
+}
+.partner-logo-item img {
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.partner-logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Detail Modals for Competitions & Events (F11)
+   ========================================================================== */
+.modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.modal-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1.25rem 1.5rem;
+}
+.modal-body {
+  padding: 1.5rem;
+}
+.modal-footer {
+  border-top: 1px solid #f1f5f9;
+  padding: 1rem 1.5rem;
+}
+.modal-detail-badge {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+}
+.modal-comp-timeline,
+.modal-event-agenda {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.modal-comp-timeline::before,
+.modal-event-agenda::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: #e2e8f0;
+}
+.modal-timeline-step {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.modal-timeline-step::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary, #0d6efd);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary, #0d6efd);
+}
 

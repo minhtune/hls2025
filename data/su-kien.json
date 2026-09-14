@@ -1,0 +1,146 @@
+[
+  {
+    "id": "sk-1",
+    "title": "ERP 4.0 - Powering Supply Chains with Data Intelligence",
+    "category": "Workshop",
+    "subtitle": "Chia sẻ từ chuyên gia giàu kinh nghiệm",
+    "description": "Workshop cung cấp kiến thức tổng quan về hệ thống ERP, vai trò và lợi ích trong quản trị doanh nghiệp hiện đại. Sinh viên được tìm hiểu về quy trình vận hành thực tế và cơ hội nghề nghiệp trong lĩnh vực ERP.",
+    "status": "completed",
+    "status_text": "Đã kết thúc",
+    "date": "2025-04-12",
+    "main_image": "image/su-kien/ws-erp/ws-erp-main.webp",
+    "gallery": [
+      "image/su-kien/ws-erp/ws-erp1.webp",
+      "image/su-kien/ws-erp/ws-erp2.webp"
+    ],
+    "featured": true,
+    "stats": {
+      "participants": "100+",
+      "experts": "2"
+    },
+    "modal_data": {
+      "agenda": [
+        {
+          "time": "08:30 - 09:00",
+          "topic": "Đón tiếp đại biểu, check-in và nhận tài liệu hội thảo"
+        },
+        {
+          "time": "09:00 - 09:45",
+          "topic": "Khái quát ERP 4.0: Kiến trúc dữ liệu và khả năng tích hợp trong Supply Chain hiện đại"
+        },
+        {
+          "time": "09:45 - 10:30",
+          "topic": "Case Study thực chiến: Triển khai SAP S/4HANA tại các tập đoàn sản xuất hàng đầu"
+        },
+        {
+          "time": "10:30 - 11:15",
+          "topic": "Thảo luận bàn tròn & Q&A trực tiếp cùng các chuyên gia giải pháp"
+        },
+        {
+          "time": "11:15 - 11:30",
+          "topic": "Tổng kết, chụp ảnh lưu niệm và trao chứng nhận tham gia"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Check-in",
+          "time": "08:30",
+          "desc": "Đón tiếp đại biểu và phát tài liệu chuyên đề"
+        },
+        {
+          "phase": "Chuyên đề 1",
+          "time": "09:00",
+          "desc": "Kiến trúc dữ liệu & ERP 4.0 trong Supply Chain"
+        },
+        {
+          "phase": "Chuyên đề 2",
+          "time": "09:45",
+          "desc": "Case Study thực chiến giải pháp SAP S/4HANA"
+        },
+        {
+          "phase": "Q&A & Kết nối",
+          "time": "10:30",
+          "desc": "Thảo luận trực tiếp và trao đổi cùng diễn giả"
+        }
+      ],
+      "speakers": [
+        "Ông Nguyễn Đình Hùng - Senior Supply Chain Solution Architect, Chuyên gia Tư vấn Chuyển đổi số Doanh nghiệp",
+        "Bà Lê Mai Phương - Trưởng nhóm Vận hành Hệ thống Thông tin Logistics ERP"
+      ],
+      "venue": "Hội trường C2 - Đại học Bách Khoa Hà Nội & Livestream qua MS Teams",
+      "registration": "Đã kết thúc đăng ký (Hơn 120 sinh viên và giảng viên tham dự)"
+    }
+  },
+  {
+    "id": "sk-2",
+    "title": "QUY TRÌNH VÀ CÔNG NGHỆ VẬN HÀNH LOGISTICS CHO THƯƠNG MẠI ĐIỆN TỬ",
+    "category": "Workshop",
+    "subtitle": "Hợp tác cùng SPX",
+    "description": "Cung cấp kiến thức từ cơ bản đến nâng cao về cách vận hành của SPX. Buổi chia sẻ giúp sinh viên hiểu rõ hơn về tiềm năng của ngành và các kỹ năng cần thiết để thành công trong quản lý vận hành.",
+    "status": "completed",
+    "status_text": "Đã kết thúc",
+    "date": "2024-11-20",
+    "main_image": "image/su-kien/ws-spx/ws-shopee-main.webp",
+    "gallery": [
+      "image/su-kien/ws-spx/ws-spx.webp",
+      "image/su-kien/ws-spx/ws-spx2.webp"
+    ],
+    "featured": false,
+    "stats": {
+      "participants": "120+",
+      "experts": "3"
+    },
+    "modal_data": {
+      "agenda": [
+        {
+          "time": "14:00 - 14:15",
+          "topic": "Ổn định chỗ ngồi, giới thiệu đại biểu & đại diện SPX Logistics"
+        },
+        {
+          "time": "14:15 - 15:00",
+          "topic": "Tổng quan mạng lưới phân loại tự động (Mega Hub) và công nghệ Sortation tự động"
+        },
+        {
+          "time": "15:00 - 15:45",
+          "topic": "Tối ưu hóa chặng giao hàng cuối (Last-Mile Delivery) bằng thuật toán AI/Machine Learning"
+        },
+        {
+          "time": "15:45 - 16:30",
+          "topic": "Cơ hội nghề nghiệp, phỏng vấn thử & chương trình tuyển dụng Fresher SPX"
+        },
+        {
+          "time": "16:30 - 17:00",
+          "topic": "Giao lưu mở và minigame nhận quà thương hiệu SPX & Shopee"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Check-in",
+          "time": "14:00",
+          "desc": "Đón tiếp & ổn định hội trường"
+        },
+        {
+          "phase": "Chia sẻ 1",
+          "time": "14:15",
+          "desc": "Mạng lưới Mega Hub & Công nghệ phân loại tự động"
+        },
+        {
+          "phase": "Chia sẻ 2",
+          "time": "15:00",
+          "desc": "Tối ưu hóa Last-Mile Logistics trong E-Commerce"
+        },
+        {
+          "phase": "Tuyển dụng",
+          "time": "15:45",
+          "desc": "Cơ hội nghề nghiệp và định hướng cùng SPX"
+        }
+      ],
+      "speakers": [
+        "Ông Hoàng Minh Đức - Giám đốc Trung tâm Khai thác Mega Hub Bắc Ninh, SPX Logistics",
+        "Bà Trần Thúy Ngân - Giám đốc Thu hút Nhân tài & Đối tác Học thuật, Shopee Vietnam"
+      ],
+      "venue": "Phòng Hội thảo Hội đồng Trường C1 - ĐHBKHN",
+      "registration": "Đã kết thúc (150+ sinh viên đăng ký thành công)"
+    }
+  }
+]

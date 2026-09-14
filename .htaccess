@@ -1,0 +1,58 @@
+# ==============================================================================
+# HLS 2025 Website - Root Apache Configuration (.htaccess)
+# Tương thích 100% Shared Hosting cPanel (Apache 2.4+ / PHP 7.4+)
+# ==============================================================================
+
+# 1. Vô hiệu hóa tính năng liệt kê danh mục thư mục (Directory Browsing)
+Options -Indexes
+
+# 2. Thiết lập bảng mã ký tự mặc định UTF-8
+AddDefaultCharset UTF-8
+
+# 3. Ép buộc chuyển hướng toàn bộ kết nối sang HTTPS (Bảo mật SSL)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Chuyển hướng sang HTTPS nếu chưa kích hoạt SSL (bỏ qua localhost/127.0.0.1)
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 4. Chặn truy cập các thư mục hệ thống và dữ liệu nhạy cảm
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Chặn truy cập trực tiếp thư mục dữ liệu, git, agent, tests
+    RewriteRule "^(\.git|\.agents|data|tests)(/.*)?$" - [F,L]
+</IfModule>
+
+# 5. Chặn truy cập các tệp ẩn (bắt đầu bằng dấu chấm, trừ .well-known của chứng chỉ SSL)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule "(^|/)\.(?!well-known)" - [F,L]
+</IfModule>
+
+# 6. Chặn truy cập trực tiếp các tệp cấu hình dev-server.js, .cpanel.yml, package.json
+<FilesMatch "(dev-server\.js|\.cpanel\.yml|\.gitignore|\.env.*|package\.json|package-lock\.json|composer\.(json|lock)|PROJECT\.md|README\.md|TEST_INFRA\.md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 7. Thiết lập các tiêu đề HTTP bảo mật (Security Headers)
+<IfModule mod_headers.c>
+    # Chống MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Chống Clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Kích hoạt bộ lọc XSS của trình duyệt
+    Header always set X-XSS-Protection "1; mode=block"
+    # Chính sách Referrer
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

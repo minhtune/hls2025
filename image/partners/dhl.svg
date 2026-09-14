@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- DHL Global Forwarding / Express Logo -->
+  <g transform="skewX(-15) translate(25, 12)">
+    <text x="0" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="34" fill="#D40511" letter-spacing="2">DHL</text>
+    <rect x="75" y="14" width="45" height="3" fill="#D40511"/>
+    <rect x="75" y="21" width="38" height="3" fill="#D40511"/>
+    <rect x="75" y="28" width="30" height="3" fill="#D40511"/>
+  </g>
+</svg>

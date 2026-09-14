@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HLS Quản Trị Hệ Thống - Admin Dashboard</title>
+  <link rel="icon" href="../image/logo/logo.webp" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- 1. MÀN HÌNH ĐĂNG NHẬP -->
+  <div id="auth-screen" class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <img src="../image/logo/logo.webp" alt="HLS Logo" />
+        <h4 class="fw-bold mb-1">HLS Admin Panel</h4>
+        <p class="text-muted small mb-0">Hệ thống quản trị nội dung CLB HLS</p>
+      </div>
+
+      <div id="login-alert" class="alert alert-danger d-none py-2 small" role="alert"></div>
+
+      <form id="login-form">
+        <div class="mb-3">
+          <label class="form-label fw-semibold small">Tên đăng nhập</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+            <input type="text" id="login-username" class="form-control" placeholder="admin" required autocomplete="username" />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label fw-semibold small">Mật khẩu</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password" />
+          </div>
+        </div>
+        <button type="submit" id="btn-login" class="btn btn-danger w-100 py-2 fw-semibold">
+          <span class="spinner-border spinner-border-sm me-2 d-none" id="login-spinner"></span>
+          Đăng nhập
+        </button>
+      </form>
+      <div class="mt-4 text-center">
+        <a href="../index.html" class="text-decoration-none small text-muted">
+          <i class="bi bi-arrow-left me-1"></i> Quay lại trang chủ website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. GIAO DIỆN QUẢN TRỊ (ADMIN LAYOUT) -->
+  <div id="admin-app" class="admin-layout d-none">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <img src="../image/logo/logo.webp" alt="HLS" class="sidebar-brand-img" />
+        <div>
+          <div class="sidebar-brand-title">HLS ADMIN</div>
+          <div class="sidebar-brand-sub">Quản trị website</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item-btn active" data-section="dashboard">
+          <i class="bi bi-speedometer2"></i> <span>Tổng quan</span>
+        </button>
+        <button class="nav-item-btn" data-section="thanh-vien">
+          <i class="bi bi-people-fill"></i> <span>Thành viên</span>
+        </button>
+        <button class="nav-item-btn" data-section="hoat-dong">
+          <i class="bi bi-calendar4-week"></i> <span>Hoạt động</span>
+        </button>
+        <button class="nav-item-btn" data-section="su-kien">
+          <i class="bi bi-megaphone-fill"></i> <span>Sự kiện</span>
+        </button>
+        <button class="nav-item-btn" data-section="cuoc-thi">
+          <i class="bi bi-trophy-fill"></i> <span>Cuộc thi</span>
+        </button>
+        <button class="nav-item-btn" data-section="gioi-thieu">
+          <i class="bi bi-info-circle-fill"></i> <span>Giới thiệu</span>
+        </button>
+        <button class="nav-item-btn" data-section="lien-he">
+          <i class="bi bi-telephone-fill"></i> <span>Liên hệ</span>
+        </button>
+        <button class="nav-item-btn" data-section="cai-dat">
+          <i class="bi bi-shield-lock-fill"></i> <span>Tài khoản</span>
+        </button>
+        <a href="../index.html" target="_blank" class="nav-item-btn text-info mt-3">
+          <i class="bi bi-box-arrow-up-right"></i> <span>Xem website</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-person-circle fs-5 text-secondary"></i>
+          <span class="small fw-semibold text-white" id="admin-user-display">admin</span>
+        </div>
+        <button id="btn-logout" class="btn btn-sm btn-outline-danger p-1 px-2" title="Đăng xuất">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <h1 class="topbar-title" id="page-heading">
+            <i class="bi bi-speedometer2 text-danger"></i> Tổng quan
+          </h1>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill">
+            <i class="bi bi-lightning-charge-fill me-1"></i> Auto-WebP Nén ảnh tự động: BẬT
+          </span>
+        </div>
+      </header>
+
+      <!-- Body Container -->
+      <div class="admin-body">
+
+        <!-- TAB 1: TỔNG QUAN -->
+        <section id="sec-dashboard" class="content-section">
+          <div class="row g-4 mb-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-icon red"><i class="bi bi-people-fill"></i></div>
+                <div>
+                  <div class="stat-val" id="stat-members">0</div>
+                  <div class="stat-lbl">Thành viên</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-icon blue"><i class="bi bi-calendar4-week"></i></div>
+                <div>
+                  <div class="stat-val" id="stat-activities">0</div>
+                  <div class="stat-lbl">Hoạt động</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-icon green"><i class="bi bi-megaphone-fill"></i></div>
+                <div>
+                  <div class="stat-val" id="stat-events">0</div>
+                  <div class="stat-lbl">Sự kiện</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-icon amber"><i class="bi bi-trophy-fill"></i></div>
+                <div>
+                  <div class="stat-val" id="stat-competitions">0</div>
+                  <div class="stat-lbl">Cuộc thi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <h5 class="fw-bold mb-3"><i class="bi bi-info-circle text-primary me-2"></i>Hướng dẫn và Tiện ích Nén ảnh thông minh</h5>
+            <p class="text-muted">
+              Hệ thống đã được tích hợp bộ nén ảnh thông minh <strong>Client-side HTML5 Canvas WebP</strong>:
+            </p>
+            <ul class="text-muted mb-3">
+              <li>Khi bạn tải lên ảnh từ máy tính hoặc điện thoại (kể cả file gốc nặng 5MB – 15MB), hệ thống sẽ <strong>tự động resize và nén sang định dạng WebP siêu nhẹ</strong> (giảm 85% – 97% dung lượng, chỉ còn ~100KB – 200KB).</li>
+              <li>Ảnh tải lên nhanh tức thì, không bị giới hạn dung lượng của Shared Hosting và giúp website tải cực kỳ mượt mà cho sinh viên truy cập.</li>
+              <li>Dữ liệu được lưu trữ tự động an toàn, tương thích tuyệt đối với Shared Hosting cPanel.</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-outline-danger btn-sm" onclick="switchSection('thanh-vien')">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Thành viên
+              </button>
+              <button class="btn btn-outline-primary btn-sm" onclick="switchSection('hoat-dong')">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Hoạt động
+              </button>
+              <button class="btn btn-outline-success btn-sm" onclick="switchSection('su-kien')">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Sự kiện
+              </button>
+              <button class="btn btn-outline-warning btn-sm" onclick="switchSection('cuoc-thi')">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Cuộc thi
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: QUẢN LÝ THÀNH VIÊN -->
+        <section id="sec-thanh-vien" class="content-section d-none">
+          <div class="admin-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-1">Danh sách Thành viên</h4>
+                <p class="text-muted small mb-0">Quản lý tên, chức vụ, ban và ảnh đại diện thành viên hiển thị trên trang thanh-vien.html</p>
+              </div>
+              <button class="btn btn-danger" onclick="openMemberModal()">
+                <i class="bi bi-person-plus-fill me-1"></i> Thêm Thành viên mới
+              </button>
+            </div>
+
+            <!-- Bộ lọc & Tìm kiếm -->
+            <div class="row g-2 mb-3">
+              <div class="col-md-4">
+                <input type="text" id="search-member" class="form-control form-control-sm" placeholder="Tìm theo tên hoặc chức vụ..." oninput="filterMembers()" />
+              </div>
+              <div class="col-md-3">
+                <select id="filter-member-dept" class="form-select form-select-sm" onchange="filterMembers()">
+                  <option value="">Tất cả các ban</option>
+                  <option value="Ban Chủ nhiệm">Ban Chủ nhiệm</option>
+                  <option value="Ban Truyền thông">Ban Truyền thông</option>
+                  <option value="Ban Đối ngoại">Ban Đối ngoại</option>
+                  <option value="Ban Sự kiện">Ban Sự kiện</option>
+                  <option value="Ban Chuyên môn">Ban Chuyên môn</option>
+                  <option value="Ban Nhân sự">Ban Nhân sự</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 70px;">Ảnh</th>
+                    <th>Họ và tên</th>
+                    <th>Ban / Bộ phận</th>
+                    <th>Chức vụ</th>
+                    <th>Khóa / Gen</th>
+                    <th class="text-end" style="width: 140px;">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="member-table-body">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: QUẢN LÝ HOẠT ĐỘNG -->
+        <section id="sec-hoat-dong" class="content-section d-none">
+          <div class="admin-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-1">Quản lý Hoạt động</h4>
+                <p class="text-muted small mb-0">Thêm, sửa hoạt động và album ảnh cho trang Hoạt động (hoat-dong.html)</p>
+              </div>
+              <button class="btn btn-danger" onclick="openActivityModal()">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Hoạt động mới
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 100px;">Ảnh bìa</th>
+                    <th>Tên hoạt động</th>
+                    <th>Mô tả</th>
+                    <th style="width: 110px;">Số lượng ảnh</th>
+                    <th style="width: 120px;">Trang chủ</th>
+                    <th class="text-end" style="width: 140px;">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="activity-table-body">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: QUẢN LÝ SỰ KIỆN -->
+        <section id="sec-su-kien" class="content-section d-none">
+          <div class="admin-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-1">Quản lý Sự kiện</h4>
+                <p class="text-muted small mb-0">Quản lý workshop, seminar, timeline sự kiện cho trang Sự kiện (su-kien.html)</p>
+              </div>
+              <button class="btn btn-danger" onclick="openEventModal()">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Sự kiện mới
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 100px;">Ảnh chính</th>
+                    <th>Tiêu đề sự kiện</th>
+                    <th>Phân loại</th>
+                    <th>Trạng thái</th>
+                    <th style="width: 120px;">Trang chủ</th>
+                    <th class="text-end" style="width: 140px;">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="event-table-body">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: QUẢN LÝ CUỘC THI -->
+        <section id="sec-cuoc-thi" class="content-section d-none">
+          <div class="admin-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-1">Quản lý Cuộc thi</h4>
+                <p class="text-muted small mb-0">Quản lý các cuộc thi thường niên cho trang Cuộc thi (cuoc-thi.html)</p>
+              </div>
+              <button class="btn btn-danger" onclick="openCompetitionModal()">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Cuộc thi mới
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 100px;">Ảnh</th>
+                    <th>Tên cuộc thi</th>
+                    <th>Mùa giải</th>
+                    <th>Trạng thái</th>
+                    <th class="text-end" style="width: 140px;">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="competition-table-body">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: QUẢN LÝ GIỚI THIỆU -->
+        <section id="sec-gioi-thieu" class="content-section d-none">
+          <div class="admin-card">
+            <h4 class="fw-bold mb-3">Quản lý Trang Giới thiệu & Trang Chủ</h4>
+            
+            <!-- Phần 1: Hero Section -->
+            <div class="card mb-4 border">
+              <div class="card-header bg-light fw-bold">1. Phần Banner Hero (Đầu trang)</div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold small">Nút khám phá (Text)</label>
+                    <input type="text" id="hero-badge-text" class="form-control" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold small">Nút khám phá (Link)</label>
+                    <input type="text" id="hero-badge-link" class="form-control" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold small">Tiêu đề chính (Phần đầu)</label>
+                    <input type="text" id="hero-title-prefix" class="form-control" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold small">Tiêu đề chính (Phần chữ xanh nổi bật)</label>
+                    <input type="text" id="hero-title-highlight" class="form-control" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-semibold small">Đoạn văn mô tả Hero</label>
+                    <textarea id="hero-subtitle" class="form-control" rows="2"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-semibold small">Danh sách ảnh cuộn Hero (Ảnh thành viên)</label>
+                    <div id="hero-images-container" class="gallery-grid mb-2"></div>
+                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="triggerUpload('gioi-thieu', addHeroImage)">
+                      <i class="bi bi-upload me-1"></i> Tải thêm ảnh Hero (Tự nén WebP)
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phần 2: Về HLS -->
+            <div class="card mb-4 border">
+              <div class="card-header bg-light fw-bold">2. Phần Về HLS</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small">Tiêu đề</label>
+                  <input type="text" id="about-title" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small">Đoạn văn 1</label>
+                  <textarea id="about-p1" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small">Đoạn văn 2</label>
+                  <textarea id="about-p2" class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phần 3: Cơ cấu tổ chức (5 Ban) -->
+            <div class="card mb-4 border">
+              <div class="card-header bg-light fw-bold">3. Cơ cấu tổ chức (Các Ban chuyên môn)</div>
+              <div class="card-body">
+                <div id="dept-list-container">
+                  <!-- Rendered via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Phần 4: Cấu hình Call To Action (CTA) -->
+            <div class="card mb-4 border" id="sec-cta">
+              <div class="card-header bg-light fw-bold">4. Cấu hình Call To Action (CTA)</div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label fw-semibold small" for="cta-title">Tiêu đề CTA</label>
+                    <input type="text" id="cta-title" class="form-control" placeholder="Nhập tiêu đề CTA (ví dụ: Sẵn sàng gia nhập cộng đồng HLS?)" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-semibold small" for="cta-description">Mô tả CTA</label>
+                    <textarea id="cta-description" name="cta-desc" class="form-control" rows="3" placeholder="Nhập mô tả cho phần Call To Action..."></textarea>
+                    <input type="hidden" id="cta-desc" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-semibold small">Ảnh minh họa CTA</label>
+                    <div class="row g-2 align-items-center">
+                      <div class="col-md-8">
+                        <input type="text" id="cta-img-url" class="form-control" placeholder="image/background/backgroundgen5.webp" />
+                      </div>
+                      <div class="col-md-4">
+                        <input type="file" id="cta-img-file" class="d-none" accept="image/*" />
+                        <button type="button" class="btn btn-outline-primary w-100" onclick="document.getElementById('cta-img-file').click()">
+                          <i class="bi bi-upload me-1"></i> Tải ảnh mới
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <img id="cta-img-preview" src="../image/background/backgroundgen5.webp" class="img-fluid rounded border" style="max-height: 120px; object-fit: cover;" alt="CTA Preview" />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="cta-button-enabled" checked />
+                      <label class="form-check-label fw-semibold small" for="cta-button-enabled">Bật / Tắt nút CTA</label>
+                    </div>
+                  </div>
+                  <div class="col-12" id="cta-btn-fields-wrapper">
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label fw-semibold small" for="cta-btn-text">Nhãn nút</label>
+                        <input type="text" id="cta-btn-text" class="form-control" placeholder="Đăng ký tuyển quân Gen 6" />
+                        <input type="hidden" id="cta-button-text" />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fw-semibold small" for="cta-button-link">Đường link nút</label>
+                        <input type="text" id="cta-button-link" class="form-control" placeholder="https://forms.gle/hls2025" />
+                        <input type="hidden" id="cta-btn-link" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-danger px-4 py-2 fw-semibold" onclick="saveAboutData()">
+              <i class="bi bi-save me-1"></i> Lưu thay đổi phần Giới thiệu
+            </button>
+          </div>
+        </section>
+
+        <!-- TAB 7: QUẢN LÝ LIÊN HỆ -->
+        <section id="sec-lien-he" class="content-section d-none">
+          <div class="admin-card">
+            <h4 class="fw-bold mb-3">Quản lý Thông tin Liên hệ</h4>
+            <p class="text-muted small mb-4">Cập nhật thông tin hiển thị trên trang Liên hệ (lien-he.html)</p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Email CLB</label>
+                <input type="email" id="contact-email" class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Fanpage Facebook (Link)</label>
+                <input type="text" id="contact-fanpage" class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Tên hiển thị Fanpage</label>
+                <input type="text" id="contact-fanpage-text" class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">LinkedIn (Link)</label>
+                <input type="text" id="contact-linkedin" class="form-control" />
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold small">Địa chỉ trụ sở</label>
+                <input type="text" id="contact-address" class="form-control" />
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold small">Link nhúng bản đồ Google Maps (Embed URL)</label>
+                <input type="text" id="contact-map" class="form-control" />
+                <div class="form-text">Nhập URL từ thuộc tính src trong mã nhúng iframe của Google Maps.</div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <button type="button" class="btn btn-danger px-4 py-2 fw-semibold" onclick="saveContactData()">
+                <i class="bi bi-save me-1"></i> Lưu thông tin liên hệ
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 8: CÀI ĐẶT TÀI KHOẢN -->
+        <section id="sec-cai-dat" class="content-section d-none">
+          <div class="admin-card" style="max-width: 540px;">
+            <h4 class="fw-bold mb-3">Đổi Mật khẩu Quản trị</h4>
+            <p class="text-muted small mb-4">Thay đổi mật khẩu đăng nhập để bảo vệ hệ thống</p>
+
+            <form id="change-pass-form">
+              <div class="mb-3">
+                <label class="form-label fw-semibold small">Mật khẩu hiện tại</label>
+                <input type="password" id="pass-current" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold small">Mật khẩu mới (tối thiểu 6 ký tự)</label>
+                <input type="password" id="pass-new" class="form-control" minlength="6" required />
+              </div>
+              <div class="mb-4">
+                <label class="form-label fw-semibold small">Xác nhận mật khẩu mới</label>
+                <input type="password" id="pass-confirm" class="form-control" minlength="6" required />
+              </div>
+              <button type="submit" class="btn btn-danger fw-semibold">
+                <i class="bi bi-key me-1"></i> Cập nhật mật khẩu
+              </button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: THÊM/SỬA THÀNH VIÊN -->
+  <div class="modal fade" id="modal-member" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modal-member-title">Thêm Thành viên mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="member-id" />
+          <div class="mb-3 text-center">
+            <div class="d-inline-block position-relative">
+              <img id="member-avatar-preview" src="../image/herosection/1.webp" class="avatar-thumbnail" alt="Avatar" />
+            </div>
+            <div class="mt-2">
+              <input type="file" id="member-avatar-input" class="d-none" accept="image/*" />
+              <button type="button" class="btn btn-sm btn-outline-danger" onclick="document.getElementById('member-avatar-input').click()">
+                <i class="bi bi-camera me-1"></i> Chọn & Tự động nén ảnh chân dung
+              </button>
+              <div id="member-avatar-badge" class="mt-1 d-none"></div>
+              <input type="hidden" id="member-avatar-url" value="image/herosection/1.webp" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Họ và tên *</label>
+            <input type="text" id="member-name" class="form-control" required placeholder="Nguyễn Văn A" />
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Ban / Bộ phận *</label>
+              <select id="member-department" class="form-select" required>
+                <option value="Ban Chủ nhiệm">Ban Chủ nhiệm</option>
+                <option value="Ban Truyền thông">Ban Truyền thông</option>
+                <option value="Ban Đối ngoại">Ban Đối ngoại</option>
+                <option value="Ban Sự kiện">Ban Sự kiện</option>
+                <option value="Ban Chuyên môn">Ban Chuyên môn</option>
+                <option value="Ban Nhân sự">Ban Nhân sự</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Chức vụ *</label>
+              <input type="text" id="member-role" class="form-control" required placeholder="Trưởng ban / Thành viên..." />
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Khóa / Gen</label>
+              <input type="text" id="member-cohort" class="form-control" placeholder="Gen 5 - K67" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Thứ tự ưu tiên hiển thị</label>
+              <input type="number" id="member-order" class="form-control" value="1" min="1" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Mô tả / Châm ngôn</label>
+            <textarea id="member-bio" class="form-control" rows="2" placeholder="Giới thiệu ngắn gọn..."></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Link Facebook / Mạng xã hội</label>
+            <input type="text" id="member-social" class="form-control" placeholder="https://facebook.com/..." />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger fw-semibold" id="btn-save-member" onclick="saveMember()">
+            Lưu thành viên
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: THÊM/SỬA HOẠT ĐỘNG -->
+  <div class="modal fade" id="modal-activity" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modal-activity-title">Thêm Hoạt động mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="activity-id" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Tên hoạt động *</label>
+            <input type="text" id="activity-title" class="form-control" required placeholder="Ví dụ: Teambuilding, Giáng Sinh Ấm Áp..." />
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Mô tả chi tiết *</label>
+            <textarea id="activity-desc" class="form-control" rows="3" required placeholder="Nội dung ý nghĩa của hoạt động..."></textarea>
+          </div>
+          <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="activity-featured" />
+            <label class="form-check-label small fw-semibold" for="activity-featured">Hiển thị nổi bật trên Trang chủ (index.html)</label>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Album ảnh hoạt động (Tự động nén WebP siêu nhẹ)</label>
+            <div id="activity-gallery-preview" class="gallery-grid mb-2"></div>
+            <input type="file" id="activity-image-input" class="d-none" accept="image/*" multiple />
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="document.getElementById('activity-image-input').click()">
+              <i class="bi bi-cloud-upload me-1"></i> Tải thêm ảnh vào Album (Chọn nhiều ảnh cùng lúc)
+            </button>
+            <div id="activity-upload-status" class="small text-muted mt-1"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger fw-semibold" id="btn-save-activity" onclick="saveActivity()">
+            Lưu hoạt động
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: THÊM/SỬA SỰ KIỆN -->
+  <div class="modal fade" id="modal-event" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modal-event-title">Thêm Sự kiện mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="event-id" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Tiêu đề sự kiện *</label>
+            <input type="text" id="event-title" class="form-control" required placeholder="Ví dụ: Workshop: ERP 4.0..." />
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Phân loại</label>
+              <input type="text" id="event-category" class="form-control" placeholder="Workshop / Talkshow / Seminar..." />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Tiêu đề phụ / Đơn vị hợp tác</label>
+              <input type="text" id="event-subtitle" class="form-control" placeholder="Hợp tác cùng SPX..." />
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Trạng thái</label>
+              <select id="event-status" class="form-select">
+                <option value="completed">Đã kết thúc</option>
+                <option value="upcoming">Sắp diễn ra</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Ngày diễn ra</label>
+              <input type="date" id="event-date" class="form-control" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Mô tả sự kiện</label>
+            <textarea id="event-desc" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="event-featured" />
+            <label class="form-check-label small fw-semibold" for="event-featured">Hiển thị nổi bật trên Trang chủ</label>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Ảnh chính sự kiện (Banner)</label>
+            <div class="mb-2">
+              <img id="event-main-img-preview" src="" class="preview-thumbnail d-none" alt="Ảnh chính" />
+            </div>
+            <input type="file" id="event-main-img-input" class="d-none" accept="image/*" />
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="document.getElementById('event-main-img-input').click()">
+              <i class="bi bi-upload me-1"></i> Chọn ảnh chính (Tự nén WebP)
+            </button>
+            <div id="event-main-img-badge" class="mt-1 d-none"></div>
+            <input type="hidden" id="event-main-img-url" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Ảnh phụ / Thư viện ảnh sự kiện</label>
+            <div id="event-gallery-preview" class="gallery-grid mb-2"></div>
+            <input type="file" id="event-gallery-input" class="d-none" accept="image/*" multiple />
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('event-gallery-input').click()">
+              <i class="bi bi-plus-circle me-1"></i> Tải thêm ảnh phụ
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger fw-semibold" id="btn-save-event" onclick="saveEvent()">
+            Lưu sự kiện
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: THÊM/SỬA CUỘC THI -->
+  <div class="modal fade" id="modal-competition" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modal-competition-title">Thêm Cuộc thi mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="competition-id" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Tên cuộc thi *</label>
+            <input type="text" id="competition-title" class="form-control" required placeholder="Ví dụ: Cuộc thi SCRACE" />
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Mùa giải *</label>
+              <input type="text" id="competition-season" class="form-control" required placeholder="Mùa giải 2025" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Trạng thái</label>
+              <select id="competition-status" class="form-select">
+                <option value="completed">Đã kết thúc</option>
+                <option value="ongoing">Đang diễn ra</option>
+                <option value="upcoming">Sắp diễn ra</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Tag / Nhãn phân loại</label>
+            <input type="text" id="competition-tag" class="form-control" placeholder="Cuộc thi chính / Sáng tạo / Học thuật..." />
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Mô tả cuộc thi</label>
+            <textarea id="competition-desc" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Link liên kết (Nút bấm)</label>
+              <input type="text" id="competition-link" class="form-control" placeholder="#" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small">Tiêu đề nút bấm</label>
+              <input type="text" id="competition-link-text" class="form-control" placeholder="Tìm hiểu thêm" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold small">Ảnh bìa cuộc thi</label>
+            <div class="mb-2">
+              <img id="competition-img-preview" src="" class="preview-thumbnail d-none" alt="Ảnh bìa" />
+            </div>
+            <input type="file" id="competition-img-input" class="d-none" accept="image/*" />
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="document.getElementById('competition-img-input').click()">
+              <i class="bi bi-upload me-1"></i> Chọn ảnh bìa (Tự nén WebP)
+            </button>
+            <div id="competition-img-badge" class="mt-1 d-none"></div>
+            <input type="hidden" id="competition-img-url" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger fw-semibold" id="btn-save-competition" onclick="saveCompetition()">
+            Lưu cuộc thi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/image-compressor.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

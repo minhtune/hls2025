@@ -1,0 +1,68 @@
+[
+  {
+    "id": "tv-1",
+    "name": "Nguyễn Hoàng Nam",
+    "role": "Chủ nhiệm CLB",
+    "department": "Ban Chủ nhiệm",
+    "cohort": "Gen 5 - K67",
+    "avatar": "image/herosection/1.webp",
+    "bio": "Dẫn dắt và định hướng các hoạt động chiến lược của CLB HLS.",
+    "social": "https://facebook.com/hlshust",
+    "order": 1
+  },
+  {
+    "id": "tv-2",
+    "name": "Trần Thị Mai Phương",
+    "role": "Phó Chủ nhiệm CLB",
+    "department": "Ban Chủ nhiệm",
+    "cohort": "Gen 5 - K67",
+    "avatar": "image/herosection/2.webp",
+    "bio": "Điều phối hoạt động các ban và đối ngoại doanh nghiệp.",
+    "social": "https://facebook.com/hlshust",
+    "order": 2
+  },
+  {
+    "id": "tv-3",
+    "name": "Lê Quang Huy",
+    "role": "Trưởng Ban Chuyên môn",
+    "department": "Ban Chuyên môn",
+    "cohort": "Gen 5 - K67",
+    "avatar": "image/herosection/3.webp",
+    "bio": "Phụ trách nội dung chuyên ngành L&SC và các cuộc thi học thuật.",
+    "social": "https://facebook.com/hlshust",
+    "order": 3
+  },
+  {
+    "id": "tv-4",
+    "name": "Phạm Thu Trang",
+    "role": "Trưởng Ban Truyền thông",
+    "department": "Ban Truyền thông",
+    "cohort": "Gen 5 - K68",
+    "avatar": "image/herosection/4.webp",
+    "bio": "Xây dựng hình ảnh, nhận diện thương hiệu và truyền thông đa kênh.",
+    "social": "https://facebook.com/hlshust",
+    "order": 4
+  },
+  {
+    "id": "tv-5",
+    "name": "Đặng Minh Quân",
+    "role": "Trưởng Ban Sự kiện",
+    "department": "Ban Sự kiện",
+    "cohort": "Gen 5 - K67",
+    "avatar": "image/herosection/5.webp",
+    "bio": "Quản lý và tổ chức các sự kiện, workshop, company tour cho sinh viên.",
+    "social": "https://facebook.com/hlshust",
+    "order": 5
+  },
+  {
+    "id": "tv-6",
+    "name": "Hoàng Diệu Linh",
+    "role": "Trưởng Ban Nhân sự",
+    "department": "Ban Nhân sự",
+    "cohort": "Gen 5 - K68",
+    "avatar": "image/herosection/2.webp",
+    "bio": "Đào tạo, phát triển và gắn kết các thế hệ thành viên HLS.",
+    "social": "https://facebook.com/hlshust",
+    "order": 6
+  }
+]

@@ -21,22 +21,49 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        prefix: 'tw-',
-        corePlugins: {
-          preflight: false,
-        }
-      }
-    </script>
+    <link rel="canonical" href="https://hlsclub.com/index.html" />
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="HLS - CLB Logistics and Supply Chain Đại học Bách Khoa Hà Nội" />
-    <meta property="og:description" content="Website chính thức của CLB HLS" />
-    <meta property="og:image" content="image/logo/thumbnailog.webp" />
-    <meta property="og:url" content="https://hls-website.vercel.app/" />
+    <meta property="og:description" content="Hust Logistics and Supply Chain Club (HLS) - Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành Logistics và Quản lý chuỗi cung ứng." />
+    <meta property="og:image" content="https://hlsclub.com/image/logo/thumbnailog.webp" />
+    <meta property="og:url" content="https://hlsclub.com/index.html" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CLB HLS - Đại học Bách Khoa Hà Nội" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HLS - CLB Logistics and Supply Chain Đại học Bách Khoa Hà Nội" />
+    <meta name="twitter:description" content="Hust Logistics and Supply Chain Club (HLS) - Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành Logistics và Quản lý chuỗi cung ứng." />
+    <meta name="twitter:image" content="https://hlsclub.com/image/logo/thumbnailog.webp" />
+
+    <!-- Schema.org EducationalOrganization JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "CLB HLS - HUST Logistics and Supply Chain Club",
+      "alternateName": "CLB HLS",
+      "url": "https://hlsclub.com/index.html",
+      "logo": "https://hlsclub.com/image/logo/logo.webp",
+      "description": "Câu lạc bộ Logistics and Supply Chain Đại học Bách Khoa Hà Nội (HLS) - Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành Logistics.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Trường Kinh tế, Đại học Bách Khoa Hà Nội, Số 1 Đại Cồ Việt",
+        "addressLocality": "Hai Bà Trưng",
+        "addressRegion": "Hà Nội",
+        "postalCode": "100000",
+        "addressCountry": "VN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/hlshust",
+        "https://www.linkedin.com/company/hls-club/"
+      ]
+    }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26FZD47JPH"></script>
     <script>
@@ -49,7 +76,7 @@
   </head>
   <body>
     <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-white" style="z-index: 1000;">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="image/logo/logo.webp" alt="HLS Logo" style="height: 40px; border-radius: 8px;">
@@ -68,7 +95,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Giới thiệu</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Giới thiệu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="hoat-dong.html">Hoạt động</a>
@@ -80,54 +107,59 @@
               <a class="nav-link" href="cuoc-thi.html">Cuộc thi</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="thanh-vien.html">Thành viên</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="lien-he.html">Liên hệ</a>
             </li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-cta" href="#" data-fillout-id="e7P6HJx4a7us" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium">Trở thành thành viên</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="tw-bg-gradient-to-b tw-from-[#f0f6ff] tw-via-[#fffbee] tw-to-[#f0f6ff] tw-min-h-screen tw-flex tw-flex-col tw-justify-center">
-      <main class="tw-flex-grow tw-flex tw-flex-col tw-items-center tw-px-6 sm:tw-px-10 tw-max-w-7xl tw-mx-auto tw-w-full tw-py-12">
+    <section class="hero-section">
+      <main class="hero-content">
         <button
-          class="tw-mt-10 tw-mb-6 tw-flex tw-items-center tw-space-x-2 tw-border tw-border-blue-600 tw-text-blue-600 tw-text-xs tw-rounded-full tw-px-4 tw-pr-1.5 tw-py-1.5 hover:tw-bg-blue-50 tw-transition"
+          class="hero-badge-btn"
           type="button"
+          id="hero-badge-btn"
           onclick="window.location.href='https://www.facebook.com/hlshust'">
-          <span>
+          <span id="hero-badge-text">
             Khám phá các hoạt động của CLB
           </span>
-          <span class="tw-flex tw-items-center tw-justify-center tw-size-6 tw-p-1 tw-rounded-full tw-bg-blue-600">
+          <span class="hero-badge-icon">
             <svg width="14" height="11" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 6.5h14M9.5 1 15 6.5 9.5 12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </span>
         </button>
-        <h1 class="tw-text-center tw-text-red-900 tw-font-semibold tw-text-3xl sm:tw-text-4xl md:tw-text-5xl lg:tw-text-6xl tw-max-w-4xl tw-leading-tight">
+        <h1 class="hero-title">
           HUST
-          <span class="tw-text-blue-600">
+          <span class="hero-title-highlight" id="hero-title-highlight">
             Logistics and Supply Chain Club
           </span>
         </h1>
-        <p class="tw-mt-6 tw-text-center tw-text-gray-600 tw-max-w-2xl tw-text-base sm:tw-text-lg tw-leading-relaxed">
+        <p class="hero-subtitle" id="hero-subtitle">
           Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành 
           Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội.
         </p>
-        <div aria-label="Thành viên CLB" class="hero-image-scroll tw-mt-16 tw-flex tw-gap-6 tw-max-w-5xl tw-w-full tw-pb-6 md:tw-justify-center">
-          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+        <div aria-label="Thành viên CLB" class="hero-image-scroll" id="hero-images-scroll">
+          <img alt="Thành viên HLS" class="hero-img-item" height="176"
             src="image/herosection/1.webp"
             width="144" />
-          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+          <img alt="Thành viên HLS" class="hero-img-item" height="176"
             src="image/herosection/2.webp"
             width="144" />
-          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+          <img alt="Thành viên HLS" class="hero-img-item" height="176"
             src="image/herosection/3.webp"
             width="144" />
-          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+          <img alt="Thành viên HLS" class="hero-img-item" height="176"
             src="image/herosection/4.webp"
             width="144" />
-          <img alt="Thành viên HLS" class="tw-w-32 sm:tw-w-36 tw-h-40 sm:tw-h-44 tw-rounded-lg hover:tw--translate-y-1 tw-transition tw-duration-300 tw-object-cover tw-flex-shrink-0 tw-shadow-md" height="176"
+          <img alt="Thành viên HLS" class="hero-img-item" height="176"
             src="image/herosection/5.webp"
             width="144" />
         </div>
@@ -137,11 +169,11 @@
     <!-- Về chúng tôi -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">VỀ HLS</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" id="home-about-title">VỀ HLS</h2>
+        <p class="section-subtitle" id="home-about-p1">
           Câu lạc bộ Hust Logistics and Supply   Chain Club  là Câu lạc bộ học thuật chính thức của ngành Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội, được thành lập vào tháng 5/2020 dưới sự quản lý của Trường Kinh tế, Đại học Bách khoa Hà Nội.
         </p>
-        <p class="section-subtitle">
+        <p class="section-subtitle" id="home-about-p2">
           CLB HLS được thành lập với mục đích xây dựng một cộng đồng dành cho những bạn có niềm đam mê với chuyên ngành L&SC tại ĐHBKHN nói riêng và tất cả những bạn sinh viên trên toàn quốc nói chung
 Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các bạn sinh viên với thầy cô và các doanh nghiệp, từ đó tạo cơ hội để các bạn sinh viên sớm được tiếp xúc với những kiến thức chuyên sâu, kinh nghiệm quý báu, tạo bàn đạp để phát triển bản thân trong tương lai.
         </p>
@@ -153,14 +185,14 @@ Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các b
       <div class="container" data-org-tabs>
         <h2 class="section-title">Cơ cấu tổ chức</h2>
         <div class="org-wrapper row g-0 mt-3">
-          <div class="col-lg-4 org-list p-2 p-lg-3">
+          <div class="col-lg-4 org-list p-2 p-lg-3" id="home-dept-tabs">
             <button class="org-tab-btn active" data-target="ban-truyen-thong">Ban Truyền thông</button>
             <button class="org-tab-btn" data-target="ban-doi-ngoai">Ban Đối ngoại</button>
             <button class="org-tab-btn" data-target="ban-su-kien">Ban Sự kiện</button>
             <button class="org-tab-btn" data-target="ban-chuyen-mon">Ban Chuyên môn</button>
             <button class="org-tab-btn" data-target="ban-nhan-su">Ban Nhân sự</button>
           </div>
-          <div class="col-lg-8 p-4 p-lg-5 org-content">
+          <div class="col-lg-8 p-4 p-lg-5 org-content" id="home-dept-panels">
             <div class="org-panel active fade-in" id="ban-truyen-thong">
               <img
                 src="image/cac-ban/ban-truyen-thong.webp"
@@ -327,7 +359,7 @@ Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các b
         <p class="section-subtitle text-center mx-auto" style="max-width: 680px">
           Tham gia các hoạt động gắn kết, sôi động và ý nghĩa - nơi mọi thành viên cùng nhau tạo nên những kỷ niệm đáng nhớ.
         </p>
-        <div class="row g-4 mt-3">
+        <div class="row g-4 mt-3" id="home-activities-teaser">
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 activity-card border-0 shadow-sm">
               <img src="image/hoat-dong/teambuilding/teambuilding1.webp" class="card-img-top" alt="Teambuilding" style="height: 220px; object-fit: cover;">
@@ -372,7 +404,7 @@ Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các b
         <p class="section-subtitle text-center mx-auto" style="max-width: 680px">
           Workshop chuyên ngành, chia sẻ từ chuyên gia và các sự kiện kết nối với doanh nghiệp.
         </p>
-        <div class="row g-4 mt-3 align-items-center">
+        <div class="row g-4 mt-3 align-items-center" id="home-event-teaser">
           <div class="col-lg-6">
             <div class="event-feature-card">
               <img src="image/su-kien/ws-erp/ws-erp-main.webp" alt="Workshop ERP" class="img-fluid rounded-4 shadow-lg">
@@ -418,7 +450,7 @@ Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các b
         <p class="section-subtitle text-center mx-auto" style="max-width: 680px">
           Thử thách bản thân qua các cuộc thi học thuật đỉnh cao, nơi sinh viên thể hiện tài năng và kiến thức chuyên môn.
         </p>
-        <div class="row g-4 mt-3">
+        <div class="row g-4 mt-3" id="home-competitions-teaser">
           <div class="col-lg-4">
             <div class="competition-card">
               <div class="competition-image">
@@ -489,34 +521,148 @@ Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các b
       </div>
     </section>
 
+    <!-- Partner & Enterprise Logo Section (F12) -->
+    <section class="partners-section py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="text-uppercase fw-semibold text-primary mb-1" style="letter-spacing: 1px;">Mạng lưới liên kết</p>
+          <h3 class="fw-bold text-dark mb-2">DOANH NGHIỆP & ĐỐI TÁC ĐỒNG HÀNH</h3>
+          <p class="text-muted small mx-auto" style="max-width: 620px;">
+            HLS tự hào hợp tác cùng các doanh nghiệp đầu ngành và đơn vị học thuật uy tín nhằm tạo ra những giá trị thiết thực nhất cho cộng đồng sinh viên.
+          </p>
+        </div>
+        <div class="partner-grid">
+          <div class="partner-logo-item">
+            <img src="image/partners/spx.svg" alt="SPX Logistics" title="SPX Logistics" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/shopee.svg" alt="Shopee Vietnam" title="Shopee" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/viettelpost.svg" alt="Viettel Post" title="Viettel Post" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/vnpost.svg" alt="Vietnam Post (VNPost)" title="Vietnam Post" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/dhl.svg" alt="DHL Global Forwarding" title="DHL" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/ghtk.svg" alt="Giao Hàng Tiết Kiệm (GHTK)" title="Giao Hàng Tiết Kiệm" loading="lazy" />
+          </div>
+          <div class="partner-logo-item">
+            <img src="image/partners/sem-hust.svg" alt="Trường Kinh tế SEM - ĐHBKHN" title="Trường Kinh tế SEM - ĐHBKHN" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Call to Action -->
-    <section class="cta-section">
+    <section class="cta-section" id="cta-section">
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
-            <h2 class="cta-title mb-4">Sẵn sàng gia nhập cộng đồng HLS?</h2>
-            <p class="cta-description mb-5">
+            <h2 id="cta-title" class="cta-title mb-4">Sẵn sàng gia nhập cộng đồng HLS?</h2>
+            <p id="cta-desc" class="cta-description mb-5">
               Đừng bỏ lỡ cơ hội phát triển bản thân và kết nối với những người có cùng đam mê. 
               Hãy trở thành một phần của gia đình HLS ngay hôm nay!
             </p>
+            <div class="mb-5">
+              <a
+                id="cta-btn"
+                href="https://forms.gle/hls2025"
+                class="btn btn-cta-large"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Đăng ký tuyển quân Gen 6
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
             <div class="cta-image-frame mb-5">
-              <img src="image/background/backgroundgen5.webp" class="img-fluid" alt="HLS Community">
+              <img id="cta-image" src="image/background/backgroundgen5.webp" class="img-fluid cta-image" alt="HLS Community" loading="lazy">
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="site-footer bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Column 1: Brand & Club Info -->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand mb-3">
+              <img src="image/logo/logo.webp" alt="HLS Logo" height="44" class="rounded mb-2" />
+              <h5 class="fw-bold text-white mb-1">CLB HLS - HUST Logistics Club</h5>
+            </div>
+            <p class="text-white-50 small mb-3">
+              Câu lạc bộ Logistics và Quản lý chuỗi cung ứng Đại học Bách Khoa Hà Nội (HLS - HUST Logistics and Supply Chain Club) là tổ chức học thuật kết nối sinh viên đam mê ngành Logistics & Supply Chain.
+            </p>
+            <div class="d-flex gap-2">
+              <a href="https://facebook.com/hlshust" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/hls-club" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="fw-bold text-white mb-3">Liên kết nhanh</h5>
+            <ul class="list-unstyled footer-links mb-0">
+              <li><a href="index.html">Giới thiệu</a></li>
+              <li><a href="hoat-dong.html">Hoạt động</a></li>
+              <li><a href="su-kien.html">Sự kiện</a></li>
+              <li><a href="cuoc-thi.html">Cuộc thi</a></li>
+              <li><a href="thanh-vien.html">Thành viên</a></li>
+              <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold text-white mb-3">Thông tin liên hệ</h5>
+            <ul class="list-unstyled text-white-50 small mb-0">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <i class="bi bi-envelope text-primary mt-1"></i>
+                <a href="mailto:ketnoi@hustlogistics.com" class="text-white-50 text-decoration-none">ketnoi@hustlogistics.com</a>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <i class="bi bi-geo-alt text-primary mt-1"></i>
+                <span>Trường Kinh tế - Đại học Bách Khoa Hà Nội, Phòng 202 Nhà C9, Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Community / Connection -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold text-white mb-3">Kết nối & Đồng hành</h5>
+            <p class="text-white-50 small mb-3">
+              Khám phá cơ hội nghề nghiệp, giao lưu học thuật và mở rộng mạng lưới quan hệ trong ngành Logistics & Supply Chain.
+            </p>
+            <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="#" data-fillout-id="e7P6HJx4a7us" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium">
+              Trở thành thành viên
+            </a>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary mt-4 pt-3 text-center">
+          <p class="text-white-50 small mb-0">© 2025 HLS Club. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
     <script src="js/script.js"></script>
+    <script src="js/dynamic-content.js"></script>
     <script src="https://server.fillout.com/embed/v1/"></script>
   </body>
   </html>

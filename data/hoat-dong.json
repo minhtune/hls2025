@@ -1,0 +1,63 @@
+[
+  {
+    "id": "hd-1",
+    "title": "Teambuilding",
+    "description": "Hoạt động teambuilding giúp gắn kết các thành viên, tạo ra một môi trường làm việc nhóm hiệu quả và đầy năng lượng.",
+    "featured": true,
+    "images": [
+      "image/hoat-dong/teambuilding/teambuilding1.webp",
+      "image/hoat-dong/teambuilding/teambuilding2.webp",
+      "image/hoat-dong/teambuilding/teambuilding3.webp",
+      "image/hoat-dong/teambuilding/teambuilding4.webp",
+      "image/hoat-dong/teambuilding/teambuilding5.webp",
+      "image/hoat-dong/teambuilding/teambuilding6.webp"
+    ],
+    "created_at": "2025-01-10"
+  },
+  {
+    "id": "hd-2",
+    "title": "Giáng Sinh Ấm Áp",
+    "description": "Mỗi mùa Giáng sinh, HLS lại cùng nhau tạo nên những kỷ niệm ấm áp qua các hoạt động trang trí, trao quà và những buổi tiệc thân mật.",
+    "featured": true,
+    "images": [
+      "image/hoat-dong/christmas2024/giangsinh.webp",
+      "image/hoat-dong/christmas2024/giangsinh2.webp",
+      "image/hoat-dong/christmas2024/giangsinh3.webp",
+      "image/hoat-dong/christmas2024/giangsinh4.webp",
+      "image/hoat-dong/christmas2024/giangsinh5.webp",
+      "image/hoat-dong/christmas2024/giangsinh6.webp"
+    ],
+    "created_at": "2024-12-25"
+  },
+  {
+    "id": "hd-3",
+    "title": "Ngày Quốc tế Phụ nữ 8/3",
+    "description": "HLS luôn dành sự trân trọng đặc biệt đến các thành viên nữ. Ngày 8/3 là dịp để chúng tôi gửi lời cảm ơn và những món quà ý nghĩa.",
+    "featured": false,
+    "images": [
+      "image/hoat-dong/8-3-2025/tangqua.webp",
+      "image/hoat-dong/8-3-2025/tangqua2.webp"
+    ],
+    "created_at": "2025-03-08"
+  },
+  {
+    "id": "hd-4",
+    "title": "Ngày Phụ nữ Việt Nam 20/10",
+    "description": "Tôn vinh vẻ đẹp và vai trò của người phụ nữ Việt Nam, HLS tổ chức các hoạt động ý nghĩa để chúc mừng các thành viên nữ.",
+    "featured": false,
+    "images": [
+      "image/hoat-dong/20-10-2025/tangqua2010.webp"
+    ],
+    "created_at": "2024-10-20"
+  },
+  {
+    "id": "hd-5",
+    "title": "Sinh nhật CLB",
+    "description": "Dấu mốc quan trọng hàng năm, là dịp để tất cả các thế hệ thành viên cùng nhìn lại chặng đường đã qua và hướng tới tương lai.",
+    "featured": true,
+    "images": [
+      "image/hoat-dong/birthday2025/sinhnhat.webp"
+    ],
+    "created_at": "2025-05-15"
+  }
+]

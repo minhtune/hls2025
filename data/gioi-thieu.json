@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "badge_text": "Khám phá các hoạt động của CLB",
+    "badge_link": "https://www.facebook.com/hlshust",
+    "title_prefix": "HUST",
+    "title_highlight": "Logistics and Supply Chain Club",
+    "subtitle": "Nơi kết nối đam mê, phát triển chuyên môn và định hướng tương lai trong ngành Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội.",
+    "images": [
+      "image/herosection/1.webp",
+      "image/herosection/2.webp",
+      "image/herosection/3.webp",
+      "image/herosection/4.webp",
+      "image/herosection/5.webp"
+    ]
+  },
+  "about": {
+    "title": "VỀ HLS",
+    "paragraphs": [
+      "Câu lạc bộ Hust Logistics and Supply Chain Club là Câu lạc bộ học thuật chính thức của ngành Logistics và Quản lý chuỗi cung ứng tại Đại học Bách Khoa Hà Nội, được thành lập vào tháng 5/2020 dưới sự quản lý của Trường Kinh tế, Đại học Bách khoa Hà Nội.",
+      "CLB HLS được thành lập với mục đích xây dựng một cộng đồng dành cho những bạn có niềm đam mê với chuyên ngành L&SC tại ĐHBKHN nói riêng và tất cả những bạn sinh viên trên toàn quốc nói chung. Bên cạnh đó, HLS cũng đóng vai trò như một cầu nối giữa các bạn sinh viên với thầy cô và các doanh nghiệp, từ đó tạo cơ hội để các bạn sinh viên sớm được tiếp xúc với những kiến thức chuyên sâu, kinh nghiệm quý báu, tạo bàn đạp để phát triển bản thân trong tương lai."
+    ]
+  },
+  "departments": [
+    {
+      "id": "ban-truyen-thong",
+      "name": "Ban Truyền thông",
+      "image": "image/cac-ban/ban-truyen-thong.webp",
+      "description": "Cơ quan ngôn luận chính thức của HLS trên các nền tảng truyền thông đại chúng, nơi truyền đi những thông điệp tích cực của CLB đến cộng đồng và các đối tác. Với nhiệm vụ:",
+      "tasks": [
+        "Viết các bài viết thông báo về những sự kiện quan trọng của CLB như các cuộc thi, workshop,... và những nội dung khác",
+        "Chụp ảnh, chỉnh sửa ảnh để có thể đưa lên các nền tảng của CLB",
+        "Thiết kế khung ảnh, bộ nhận diện phục vụ cho các sự kiện lớn",
+        "Quay và edit video quảng bá cho các sự kiện lớn"
+      ]
+    },
+    {
+      "id": "ban-doi-ngoai",
+      "name": "Ban Đối ngoại",
+      "image": "image/cac-ban/ban-doi-ngoai.webp",
+      "description": "Những \"đại sứ thương hiệu\" của HLS, là cầu nối hiệu quả giữa CLB với các doanh nghiệp, đối tác, các đơn vị bảo trợ; đóng vai trò quan trọng trong việc xây dựng thương hiệu, nâng tầm và quảng bá hình ảnh HLS đến cộng đồng ngành Logistics và Chuỗi cung ứng. Với nhiệm vụ:",
+      "tasks": [
+        "Đại diện CLB kêu gọi HTTT, mời nhà tài trợ",
+        "Liên lạc với những người tham gia sự kiện của CLB thông qua những kênh như gmail, zalo"
+      ]
+    },
+    {
+      "id": "ban-su-kien",
+      "name": "Ban Sự kiện",
+      "image": "image/cac-ban/ban-su-kien.webp",
+      "description": "Là “xương sống” của mọi hoạt động, Ban Sự kiện chịu trách nhiệm tổ chức, điều phối và đảm bảo chương trình được triển khai suôn sẻ, chuyên nghiệp, mang lại trải nghiệm tốt nhất cho người tham gia. Với nhiệm vụ:",
+      "tasks": [
+        "Chủ trì công tác chuẩn bị và hậu cần trước – trong – sau sự kiện, đảm bảo mọi chi tiết đều được triển khai đúng kế hoạch.",
+        "Quản lý và kiểm soát các vấn đề tài chính của sự kiện: lập dự trù, theo dõi chi tiêu, đảm bảo tính minh bạch và hiệu quả.",
+        "Phụ trách kỹ thuật, phân công và điều phối nhân sự theo từng khu vực, tối ưu hóa nguồn lực để sự kiện vận hành trơn tru.",
+        "Phối hợp chặt chẽ với Ban Truyền thông để xây dựng hình ảnh sự kiện chuyên nghiệp, thu hút và lan tỏa giá trị của CLB đến cộng đồng."
+      ]
+    },
+    {
+      "id": "ban-chuyen-mon",
+      "name": "Ban Chuyên môn",
+      "image": "image/cac-ban/ban-chuyen-mon.webp",
+      "description": "Được coi là cốt lõi của CLB HLS, BCM có trách nhiệm trong những công việc có tính chất học thuật cao của CLB với nhiệm vụ:",
+      "tasks": [
+        "Phụ trách nội dung câu hỏi trong những cuộc thi chính của CLB như “Nhìn lại Kinh tế”, “The Supply Chain Race”. Đây là cơ hội để các bạn được tiếp cận với những tài liệu cao cấp, từ đó có thể nâng cao năng lực chuyên môn.",
+        "Viết các bài viết với nội dung thời sự/học thuật để đăng tải trên các nền tảng số của CLB.",
+        "Tham gia vào hoạt động hỗ trợ giải đáp thắc mắc trong học tập cùng các anh chị khóa trên"
+      ]
+    },
+    {
+      "id": "ban-nhan-su",
+      "name": "Ban Nhân sự",
+      "image": "image/cac-ban/ban-nhan-su.webp",
+      "description": "Ban Nhân sự chịu trách nhiệm toàn bộ các khâu liên quan đến con người trong tổ chức, từ việc thu hút đến phát triển và giữ chân nhân tài, đảm bảo môi trường làm việc hiệu quả và gắn kết. Với nhiệm vụ:",
+      "tasks": [
+        "Phát triển: Xây dựng đào tạo, lộ trình phát triển và giữ chân nhân sự.",
+        "Đánh giá & Quyền lợi: Triển khai đánh giá hiệu suất, đảm bảo quyền lợi và khen thưởng.",
+        "Gắn kết: Lên kế hoạch sự kiện team-building, nắm bắt tâm tư để xây dựng môi trường làm việc tích cực.",
+        "Hợp tác: Phối hợp với các ban khác để đáp ứng nhu cầu nhân sự chung."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Sẵn sàng gia nhập cộng đồng HLS?",
+    "description": "Đừng bỏ lỡ cơ hội phát triển bản thân và kết nối với những người có cùng đam mê. Hãy trở thành một phần của gia đình HLS ngay hôm nay!",
+    "image": "image/background/backgroundgen5.webp",
+    "button_enabled": false,
+    "button_text": "Đăng ký tuyển quân Gen 6",
+    "button_link": "https://forms.gle/hls2025"
+  }
+}

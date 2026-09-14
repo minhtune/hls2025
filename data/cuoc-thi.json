@@ -1,0 +1,133 @@
+[
+  {
+    "id": "ct-1",
+    "title": "Cuộc thi SCRACE",
+    "short_name": "SCRACE 2025",
+    "season": "Mùa giải 2025",
+    "status": "completed",
+    "status_text": "Đã kết thúc",
+    "tag": "Cuộc thi chính",
+    "description": "SCRACE là cuộc thi thường niên lớn nhất của CLB, tạo ra một sân chơi học thuật chuyên nghiệp về Logistics và Quản lý chuỗi cung ứng cho sinh viên. Thí sinh sẽ trải qua các vòng thi đầy thử thách, từ giải case study, thuyết trình đến phản biện, để tìm ra nhà vô địch xứng đáng.",
+    "short_desc": "Cuộc thi thường niên lớn nhất về Logistics và Quản lý chuỗi cung ứng.",
+    "image": "image/cuoc-thi/srace2025/Srace2025.webp",
+    "link": "#",
+    "link_text": "Tìm hiểu thêm",
+    "modal_data": {
+      "regulations": "Đối tượng tham gia: Toàn thể sinh viên các trường Đại học, Cao đẳng trên toàn quốc đam mê Logistics và Chuỗi cung ứng. Hình thức thi theo đội (3-4 thành viên/đội). Các đội thi phải tuân thủ nghiêm ngặt quy định về tính trung thực học thuật, không sao chép đề án và bảo mật tài liệu bài thi từ doanh nghiệp bảo trợ.",
+      "timeline": [
+        {
+          "phase": "Vòng 1 - Sơ loại",
+          "date": "15/03 - 25/03",
+          "desc": "Nộp hồ sơ đăng ký & Bài test trắc nghiệm kiến thức Logistics trực tuyến."
+        },
+        {
+          "phase": "Vòng 2 - Đề án",
+          "date": "28/03 - 08/04",
+          "desc": "Giải Case Study thực tế từ doanh nghiệp bảo trợ và nộp báo cáo đề án chi tiết."
+        },
+        {
+          "phase": "Vòng Chung kết",
+          "date": "15/04",
+          "desc": "Thuyết trình và phản biện trực tiếp trước Hội đồng Ban giám khảo tại Hội trường C2 - ĐHBKHN."
+        }
+      ],
+      "speakers": [
+        "TS. Trần Thu Hương - Viện Kinh tế & Quản lý, ĐHBKHN (Trưởng Ban giám khảo)",
+        "ThS. Nguyễn Văn Anh - Giám đốc Chuỗi cung ứng SPX Logistics",
+        "Bà Lê Hoàng Mai - Chuyên gia Tối ưu hóa Mạng lưới Phân phối Viettel Post"
+      ],
+      "judges": [
+        "TS. Trần Thu Hương - Viện Kinh tế & Quản lý, ĐHBKHN",
+        "ThS. Nguyễn Văn Anh - SPX Logistics",
+        "Bà Lê Hoàng Mai - Viettel Post"
+      ],
+      "prizes": "Tổng giá trị giải thưởng 60.000.000 VNĐ: Quán quân 25.000.000 VNĐ + Suất thực tập đặc cách tại SPX Logistics; Á quân 15.000.000 VNĐ; Quý quân 10.000.000 VNĐ; 02 Giải Khuyến khích 5.000.000 VNĐ."
+    }
+  },
+  {
+    "id": "ct-2",
+    "title": "Cuộc thi VNYLT",
+    "short_name": "VNYLT 2024",
+    "season": "Mùa giải 2024",
+    "status": "completed",
+    "status_text": "Đã kết thúc",
+    "tag": "Sáng tạo",
+    "description": "VNYLT là cuộc thi sáng tạo giải pháp logisitcs với mục đích lan tỏa kiến thức và niềm đam mê Logistics tới cộng đồng. Các đội thi sẽ sáng tạo giải pháp thông qua việc trải nghiệm và thể hiện sự sáng tạo và khả năng truyền đạt của mình.",
+    "short_desc": "Cuộc thi sáng tạo giải pháp logistics, lan tỏa kiến thức đến cộng đồng.",
+    "image": "image/cuoc-thi/vnylt2024/vny2024.webp",
+    "link": "#",
+    "link_text": "Xem lại các bài thi",
+    "modal_data": {
+      "regulations": "Đối tượng tham gia: Sinh viên hệ đại học chính quy yêu thích lĩnh vực chuỗi cung ứng. Đăng ký tự do theo nhóm 4 người. Đề án dự thi phải là sản phẩm sáng tạo nguyên bản của nhóm, ứng dụng công nghệ số và tiêu chuẩn phát triển bền vững.",
+      "timeline": [
+        {
+          "phase": "Vòng 1 - Khởi động",
+          "date": "01/09 - 15/09",
+          "desc": "Đăng ký dự thi và nộp video giới thiệu ý tưởng sáng tạo giải pháp chuỗi cung ứng."
+        },
+        {
+          "phase": "Vòng 2 - Bán kết",
+          "date": "20/09 - 05/10",
+          "desc": "Hoàn thiện đề án chi tiết với sự hướng dẫn của Mentor chuyên môn từ doanh nghiệp."
+        },
+        {
+          "phase": "Vòng Chung kết",
+          "date": "20/10",
+          "desc": "Bảo vệ giải pháp và trả lời câu hỏi phản biện từ Ban cố vấn chuyên gia."
+        }
+      ],
+      "speakers": [
+        "ThS. Phạm Quốc Dũng - Trưởng ban Logistics Hiệp hội Phát triển Nhân lực Logistics Việt Nam (VALOMA)",
+        "Ông Đỗ Minh Khoa - Giám đốc Vận hành Kho vận Shopee Vietnam"
+      ],
+      "judges": [
+        "ThS. Phạm Quốc Dũng - Hiệp hội VALOMA",
+        "Ông Đỗ Minh Khoa - Shopee Vietnam"
+      ],
+      "prizes": "Tổng giá trị giải thưởng 45.000.000 VNĐ cùng các khóa học chứng chỉ FIATA quốc tế và cơ hội phỏng vấn trực tiếp vào chương trình Management Trainee."
+    }
+  },
+  {
+    "id": "ct-3",
+    "title": "Cuộc thi Nhìn lại kinh tế",
+    "short_name": "Nhìn lại kinh tế 2024",
+    "season": "Mùa giải 2024",
+    "status": "completed",
+    "status_text": "Đã kết thúc",
+    "tag": "Học thuật",
+    "description": "\"Nhìn lại kinh tế\" là một cuộc thi học thuật đầy kịch tính, mang đến cho bạn một sân chơi vận dụng kiến thức chuyên môn, kỹ năng giải quyết vấn đề và tư duy chiến lược.",
+    "short_desc": "Cuộc thi học thuật kịch tính với các thử thách kiến thức kinh tế.",
+    "image": "image/cuoc-thi/nlkt2024/nlkt.webp",
+    "link": "#",
+    "link_text": "Tìm hiểu thêm",
+    "modal_data": {
+      "regulations": "Đối tượng tham gia: Sinh viên khối ngành Kinh tế, Quản lý, Logistics và Công nghệ toàn miền Bắc. Thí sinh thi đấu theo hình thức cá nhân hoặc đội 2 người, vượt qua các vòng thử thách tư duy kinh tế vĩ mô và phân tích dữ liệu thị trường thực tiễn.",
+      "timeline": [
+        {
+          "phase": "Vòng 1 - Trắc nghiệm kiến thức",
+          "date": "10/11 - 18/11",
+          "desc": "Thi trắc nghiệm trực tuyến đánh giá hiểu biết kinh tế và chuỗi giá trị toàn cầu."
+        },
+        {
+          "phase": "Vòng 2 - Tranh biện đối kháng",
+          "date": "22/11 - 30/11",
+          "desc": "Tranh biện theo nhóm về các chủ đề nóng của kinh tế Việt Nam và thế giới."
+        },
+        {
+          "phase": "Vòng Chung kết - Gala Đêm vinh danh",
+          "date": "10/12",
+          "desc": "Giải mã tình huống khủng hoảng chuỗi cung ứng và đề xuất chiến lược phục hồi trước hội đồng chuyên gia."
+        }
+      ],
+      "speakers": [
+        "PGS.TS Vũ Đình Khoa - Phó Trưởng Khoa Quản trị Kinh doanh ĐHBKHN",
+        "Bà Hoàng Thục Uyên - Giám đốc Phân tích Dữ liệu Chuỗi cung ứng DHL Global Forwarding"
+      ],
+      "judges": [
+        "PGS.TS Vũ Đình Khoa - ĐHBKHN",
+        "Bà Hoàng Thục Uyên - DHL Global Forwarding"
+      ],
+      "prizes": "Tổng giá trị giải thưởng 30.000.000 VNĐ cùng kỷ niệm chương, học bổng chuyên sâu và cơ hội kết nối nghề nghiệp với mạng lưới cựu sinh viên doanh nhân Bách Khoa."
+    }
+  }
+]

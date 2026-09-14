@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Vietnam Post (VNPost) Logo -->
+  <g transform="translate(10, 10)">
+    <!-- Yellow origami bird wing -->
+    <path d="M5 25 L25 5 L35 15 L18 32 Z" fill="#FDB813"/>
+    <path d="M18 32 L35 15 L32 35 Z" fill="#003580"/>
+  </g>
+  <text x="52" y="32" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="20" fill="#003580" letter-spacing="-0.5">VIETNAM POST</text>
+  <text x="52" y="44" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="700" font-size="9" fill="#FDB813" letter-spacing="2">BƯU ĐIỆN VIỆT NAM</text>
+</svg>
